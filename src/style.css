@@ -471,7 +471,7 @@ body {
   left: 0;
   height: 70rem;
   width: 70rem;
-  clip-path: polygon(
+  -webkit-clip-path: polygon(
     50% 0%,
     61% 35%,
     98% 35%,
@@ -500,7 +500,6 @@ body {
   background: url(./img/moto_bike.png) center / contain no-repeat;
   animation: inherit;
   animation-direction: reverse;
-  background-color: ;
 }
 
 @keyframes clipRotateAnim {
