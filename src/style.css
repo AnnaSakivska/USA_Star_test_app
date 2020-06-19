@@ -218,7 +218,7 @@ body {
 .map__img-container {
   height: 91rem;
   min-width: 100%;
-  background: url(./img/Map_1.png) no-repeat;
+  background: url(./img/map_usa.png) no-repeat;
 }
 
 .map__rectangle-img {
