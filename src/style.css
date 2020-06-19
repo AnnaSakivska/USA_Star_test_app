@@ -16,7 +16,6 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  /* color: black; */
 }
 
 :root {
@@ -299,10 +298,11 @@ body {
 
 .features {
   display: flex;
+  height: 100vh;
 }
 
 .features__text {
-  flex: 1 1 40%;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   padding-top: 10rem;
@@ -434,7 +434,80 @@ body {
 }
 
 .features__img-wrapper {
-  height: 100rem;
-  background: url(./img/scrolling_banner.png) center / contain no-repeat;
-  flex: 1 1 60%;
+  position: relative;
+  height: 70rem;
+  width: 70rem;
+  background: url(./img/moto_bike.png) center / contain no-repeat;
+  backdrop-filter: blur(5px);
+  -webkit-clip-path: circle(40% at 50% 50%);
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  height: 100%;
+}
+
+.features__img-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border: 4rem solid #ffbc6b;
+  border-radius: 50%;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.features__positioning {
+  position: relative;
+}
+
+.features__img-star-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70rem;
+  width: 70rem;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation-name: clipRotateAnim;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  overflow: hidden;
+}
+
+.features__img-star-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -1%;
+  bottom: -1%;
+  left: -1%;
+  right: -1%;
+  background: url(./img/moto_bike.png) center / contain no-repeat;
+  animation: inherit;
+  animation-direction: reverse;
+  background-color: ;
+}
+
+@keyframes clipRotateAnim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
